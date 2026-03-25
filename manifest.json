@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Claymate Cream Theme",
+  "version": "1.0",
+  "description": "A soft, clay-like cream UI for Gmail.",
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "css": ["content.css"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
