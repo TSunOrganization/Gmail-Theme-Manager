@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Gmail Claymate Theme Manager",
-  "version": "2.0",
-  "description": "Choose between Green, Red, Black Metal, and White Milk Claymate themes for Gmail.",
+  "version": "2.3",
+  "description": "Choose between Green, Red, Black Metal, and Blue Sky Claymate themes for Gmail.",
   "permissions": ["storage"],
   "content_scripts": [
     {

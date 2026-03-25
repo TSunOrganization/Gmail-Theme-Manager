@@ -20,8 +20,8 @@ A modern, tactile, and beautifully crafted Chrome extension that transforms your
 | :--- | :--- |
 | **🟢 Green Claymate** | A calming sage green palette (Default). |
 | **🔴 Red Claymate** | A warm, blush-toned and inviting aesthetic. |
-| **⚫ Black Metal** | Sleek, dark, and bold industrial style. |
-| **⚪ White Milk** | Clean, pure, and minimal creamy white. |
+| **⚫ Black Metal** | Sleek, dark, and bold industrial style with improved contrast. |
+| **🔵 Blue Sky** | A fresh, calming sky blue palette. |
 
 ---
 
@@ -37,7 +37,14 @@ A modern, tactile, and beautifully crafted Chrome extension that transforms your
 
 ## 🛠️ Changelog
 
-### v2.1 (Current)
+### v2.3 (Current)
+- Replaced "White Milk" with **Blue Sky** theme.
+- Fixed **Black Metal** text visibility and contrast issues.
+- Updated **GitHub link** to point to the organization repository.
+- Fixed **Heart Emoji** encoding in the extension footer.
+- Updated version numbering to **v2.3**.
+
+### v2.1
 - Added **Instant Theme Switching** (no reload required).
 - Added **Visual Selection Indicators** in the popup UI.
 - Added **Confirmation Messages** upon theme application.
@@ -49,20 +56,11 @@ A modern, tactile, and beautifully crafted Chrome extension that transforms your
 - Implemented **Persistent Storage** for user preferences.
 - Added **Social Links** and Custom Branding.
 
-### v1.1
-- Expanded coverage to **Message View** and **Compose Window**.
-- Updated palette to **Green Claymate**.
-- Refined shadow depths and element rounding.
-
-### v1.0
-- Initial release with **Claymate Cream** aesthetic.
-- Basic Inbox styling and icon set.
-
 ---
 
 ## 🤝 Connect With Me
 
-- **Github**: [@saeedx302](https://github.com/saeedx302)
+- **Github**: [TSunOrganization/Gmail-Theme-Manager](https://github.com/TSunOrganization/Gmail-Theme-Manager)
 - **Instagram**: [@saeedxdie](https://instagram.com/saeedxdie)
 - **Telegram**: [@saeedxdie](https://t.me/saeedxdie)
 

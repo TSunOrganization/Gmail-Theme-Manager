@@ -14,18 +14,19 @@ const themes = {
     text: '#3A2D2D'
   },
   black: {
-    bg: '#1A1A1A',
-    accent: '#333333',
-    shadowLight: '#252525',
+    bg: '#121212',
+    accent: '#2A2A2A',
+    shadowLight: '#1E1E1E',
     shadowDark: '#000000',
-    text: '#E0E0E0'
+    text: '#E8E8E8', // Improved contrast for dark mode
+    secondaryText: '#BBBBBB'
   },
-  white: {
-    bg: '#FDFDFD',
-    accent: '#F8F8FF',
+  blue: {
+    bg: '#F0F7F9',
+    accent: '#AED9E0',
     shadowLight: '#ffffff',
-    shadowDark: '#e8e8e8',
-    text: '#222222'
+    shadowDark: '#c9d9e0',
+    text: '#2D343A'
   }
 };
 
@@ -33,6 +34,8 @@ let currentThemeStyle = null;
 
 function getThemeCSS(themeName) {
   const theme = themes[themeName] || themes.green;
+  const isDark = themeName === 'black';
+  
   return `
     :root {
       --clay-bg: ${theme.bg} !important;
@@ -44,13 +47,13 @@ function getThemeCSS(themeName) {
     }
 
     /* Global Background */
-    body, .S3, .aeN, .ah9, .aeF, .aeJ, .aDP, .a98, .bkK, .nH, .brC, .brD {
+    body, .S3, .aeN, .ah9, .aeF, .aeJ, .aDP, .a98, .bkK, .nH, .brC, .brD, .G-atb {
       background-color: var(--clay-bg) !important;
       color: var(--clay-text) !important;
     }
 
     /* Sidebar and Main Container */
-    .aeN, .aeF, .no, .aH9, .bkK, .aeJ {
+    .aeN, .aeF, .no, .aH9, .bkK, .aeJ, .aDP {
       border-radius: var(--clay-radius) !important;
       margin: 10px !important;
       box-shadow: inset 8px 8px 16px var(--clay-shadow-dark), 
@@ -65,7 +68,7 @@ function getThemeCSS(themeName) {
       box-shadow: 6px 6px 12px var(--clay-shadow-dark), 
                   -6px -6px 12px var(--clay-shadow-light),
                   inset 4px 4px 8px rgba(255,255,255,0.4),
-                  inset -4px -4px 8px rgba(0,0,0,0.05) !important;
+                  inset -4px -4px 8px rgba(0,0,0,0.1) !important;
       border: none !important;
       height: 48px !important;
       padding: 0 24px !important;
@@ -121,7 +124,7 @@ function getThemeCSS(themeName) {
     }
 
     /* --- MESSAGE VIEW STYLING --- */
-    .if, .adn, .gs, .a3s.aiL, .hx {
+    .if, .adn, .gs, .a3s.aiL, .hx, .a98 {
       background-color: var(--clay-bg) !important;
       border-radius: 16px !important;
       box-shadow: inset 4px 4px 10px var(--clay-shadow-dark), 
@@ -144,10 +147,13 @@ function getThemeCSS(themeName) {
       box-shadow: none !important;
     }
 
-    /* UI CLEANUP */
-    .yW, .y6, .BltHw, .ar5, .aS3, .hP, .gD, .qG, .qF, .T-I-ax7 {
+    /* UI CLEANUP & TEXT VISIBILITY FIXES */
+    .yW, .y6, .BltHw, .ar5, .aS3, .hP, .gD, .qG, .qF, .T-I-ax7, .bog, .y2, .bAW {
       color: var(--clay-text) !important;
     }
+
+    /* Specifically for dark mode secondary text */
+    ${isDark ? '.y2, .bAW, .yO { color: #BBBBBB !important; }' : ''}
 
     .apU, .akc, .a8k, .Wh, .G3, .ajz, .brC, .brD {
       border: none !important;
@@ -169,7 +175,6 @@ function applyTheme(themeName) {
   if (!currentThemeStyle) {
     currentThemeStyle = document.createElement('style');
     currentThemeStyle.id = 'gmail-claymate-styles';
-    // Append to document head or body if head isn't ready
     (document.head || document.documentElement).appendChild(currentThemeStyle);
   }
   
@@ -190,7 +195,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   }
 });
 
-// Ensure styles stay injected even if Gmail's dynamic loading tries to overwrite them
+// Ensure styles stay injected
 const observer = new MutationObserver(() => {
   if (currentThemeStyle && !currentThemeStyle.parentNode) {
     (document.head || document.documentElement).appendChild(currentThemeStyle);
