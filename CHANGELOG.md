@@ -4,6 +4,27 @@ Here are the detailed changelogs for each version of the extension to use for yo
 
 ---
 
+## v2.4 — Polish & Reliability
+
+### Added
+- Added a reset button to temporarily restore Gmail’s default appearance
+- Added clearer active-theme indicators and confirmation feedback
+- Added improved support for multiple open Gmail tabs
+- Added keyboard focus states and reduced-motion support
+
+### Improved
+- Improved Black Metal theme contrast for subjects, snippets, buttons, menus, and compose fields
+- Improved popup layout and theme selection experience
+- Improved dynamic Gmail navigation handling
+- Improved protection against duplicate style injection
+
+### Fixed
+- Fixed theme updates not reaching some already-open Gmail tabs
+- Fixed the selected theme indicator not always matching the saved preference
+- Fixed several readability problems in dark mode
+
+---
+
 ## 🚀 v2.3 (Current)
 ### **What's New**
 - **Blue Sky Theme**: Replaced the "White Milk" option with a fresh and calming sky blue palette.
